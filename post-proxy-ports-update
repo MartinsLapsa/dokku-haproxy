@@ -10,7 +10,7 @@ haproxy_post_proxy_ports_update() {
   local trigger="haproxy_post_proxy_ports_update"
   local APP="$1" ACTION="$2"
   
-  if [[ "$(get_app_proxy_type "$APP")" == "haproxy" ]]; then
+  if [[ "$(plugn trigger proxy-type "$APP")" == "haproxy" ]]; then
     add_tcp_ports_from_dockerfile "$APP"
     haproxy_build_config "$APP"
     haproxy_reload
