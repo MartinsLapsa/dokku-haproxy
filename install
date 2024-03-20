@@ -5,9 +5,9 @@ set -eo pipefail
 source "$PLUGIN_AVAILABLE_PATH/haproxy/functions"
 
 # install haproxy
-apt-get install --no-install-recommends software-properties-common
-add-apt-repository ppa:vbernat/haproxy-2.4
-apt-get install haproxy=2.4.\*
+apt-get install --no-install-recommends -y software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-2.4
+apt-get install -y haproxy=2.4.\*
 
 # give access
 sudo cat<<EOF > /etc/sudoers.d/dokku-haproxy
