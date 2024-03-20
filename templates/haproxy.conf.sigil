@@ -3,7 +3,6 @@
 {{ $scheme := index $port_map_list 0 }}
 {{ $listen_port := index $port_map_list 1 }}
 {{ $upstream_port := index $port_map_list 2 }}
-{{ if eq $scheme "tcp" }}
   listen port-{{ $listen_port }}
     bind *:{{ $listen_port }}
     mode tcp
@@ -25,6 +24,5 @@
   {{ $listener_list := $listeners | split ":" }}
   {{ $listener_ip := index $listener_list 0 }}
     server web{{ $index }} {{ $listener_ip }}:{{ $upstream_port }} check
-  {{ end }}
   {{ end }}
 {{ end }}
