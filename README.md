@@ -9,7 +9,7 @@ It handles both tcp and http protocols. This is an alternative for [official dok
 Install the plugin:
 
 ```bash
-dokku plugin:install https://github.com/reinventit/dokku-haproxy.git
+dokku plugin:install https://github.com/MartinsLapsa/dokku-haproxy.git
 ```
 
 ### Credits
